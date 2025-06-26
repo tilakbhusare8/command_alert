@@ -1,0 +1,182 @@
+ls                             # List directory contents
+ls -l                          # Show detailed file information
+ls -a                          # Show all files including hidden ones
+ls -lh                         # Detailed view with human-readable file sizes
+ls -la                         # Detailed view of all files including hidden
+ls --all                       # Display all directory contents
+ls --human-readable            # Show sizes in KB, MB, GB format
+ls --color=auto                # Automatically colorize output for clarity
+
+cp                             # Copy files or directories
+cp -r                          # Copy directories recursively
+cp -v                          # Show files as they are copied
+cp -i                          # Ask before overwriting files
+cp -u                          # Copy only newer source files
+
+mv                             # Move or rename files and directories
+mv -i                          # Prompt before overwriting files
+mv -v                          # Show files as they are moved
+mv -n                          # Do not overwrite existing files
+
+rm                             # Remove files or directories
+rm -r                          # Delete directories and their contents
+rm -f                          # Force deletion without confirmation
+rm -rf                         # Forcefully delete directories and contents
+rm -v                          # Show files as they are deleted
+
+mkdir                          # Create new directories
+mkdir -p                       # Create parent directories if needed
+mkdir -v                       # Display each directory created
+
+rmdir                          # Delete empty directories
+rmdir -p                       # Delete directory and empty parent directories
+
+cat                            # Display file content
+cat -n                         # Number all output lines
+cat -b                         # Number only non-blank lines
+cat -s                         # Compress multiple blank lines into one
+cat --number                   # Display line numbers in output
+cat --squeeze-blank            # Remove repeated empty lines
+
+less                           # View content with scroll support
+less -N                        # Display line numbers on the side
+less --LINE-NUMBERS            # Enable visible line numbers
+
+grep                           # Search for patterns in text
+grep -i                        # Case-insensitive search
+grep -v                        # Exclude matching lines
+grep -n                        # Show line numbers of matches
+grep -r                        # Search files recursively
+grep --color=auto              # Highlight matching patterns
+grep --ignore-case             # Perform case-insensitive search
+
+find                           # Search files and directories
+find . -name '*.txt'           # Find .txt files in current directory
+find . -type f                 # Find regular files only
+find . -maxdepth 2             # Limit search depth to 2 levels
+find . -size +1M               # Find files larger than 1MB
+find . -mtime -7               # Find files modified in last 7 days
+find . -exec rm {} \;          # Find and delete matching files
+
+chmod                          # Change file or directory permissions
+chmod 755                      # Set execute and read/write permissions
+chmod 644                      # Set read/write for owner, read for others
+chmod -R 755                   # Apply permissions recursively
+chmod +x                       # Make a file executable
+
+chown                          # Change ownership of files/directories
+chown user:group file          # Set specific owner and group for a file
+chown -R user:group dir        # Change ownership recursively
+chown --recursive user:group target   # Apply owner/group to all contents
+chown --verbose user file      # Show ownership changes for files
+
+du                             # Show disk usage for files/directories
+du -h                          # Display sizes in readable units
+du -sh                         # Show total size of a directory
+du --summarize                 # Display total size of input
+du --human-readable            # Format output using readable sizes
+
+df                             # Show available disk space
+df -h                          # Display free space in human-readable format
+df -i                          # Show inode usage information
+df --human-readable            # Display block sizes in readable form
+df --inodes                    # List inode availability per filesystem
+
+tar                            # Archive and extract files
+tar -cvf archive.tar dir/      # Create a .tar archive from directory
+tar -xvf archive.tar           # Extract contents of a .tar file
+tar -tzf archive.tar.gz        # List contents of a .tar.gz archive
+tar --extract -zvf archive.tar.gz   # Extract a compressed archive
+tar --list -zvf archive.tar.gz      # View files inside compressed archive
+
+gzip                           # Compress files using gzip
+gzip file.txt                  # Compress a single text file
+gzip -d file.txt.gz            # Decompress a .gz file
+gzip --decompress file.txt.gz  # Expand a gzip-compressed file
+gzip --verbose file.txt        # Show compression progress
+
+zip                            # Create compressed .zip archive
+zip -r arch.zip dir/           # Recursively zip directory
+unzip arch.zip                 # Extract contents from zip file
+unzip -l arch.zip              # List files inside the zip archive
+unzip -o arch.zip              # Overwrite files during extraction
+
+ping                           # Test network connectivity
+ping -c 4 host                 # Send 4 echo requests
+ping -i 0.2 host               # Set delay between packets to 0.2s
+ping -t 5 host                 # Set TTL (time-to-live) to 5
+
+curl                           # Transfer data using HTTP
+curl -I http://example.com     # Fetch HTTP headers only
+curl -X POST -d "data" http://url   # Send POST data to URL
+curl -H "Header: value" http://api  # Add HTTP header to request
+curl --silent url              # Suppress progress and error messages
+
+wget                           # Download files from the internet
+wget http://example.com/file   # Download a file from a URL
+wget -c url                    # Resume a paused download
+wget -O output                 # Save file with specified name
+wget --quiet url               # Download quietly without output
+
+git                            # Track and manage code changes
+git status                     # Show working directory status
+git add .                      # Stage all changes for commit
+git commit -m "msg"            # Save staged changes with a message
+git push                       # Upload changes to remote repository
+git pull                       # Fetch and merge remote changes
+git checkout branch            # Switch to a different branch
+git checkout -b new_branch     # Create and switch to a new branch
+git branch -a                  # List all local and remote branches
+git merge branch               # Merge specified branch into current
+git clone url                  # Copy remote repo to local machine
+git log --oneline              # Compact list of commits
+git diff                       # Show differences between commits/files
+
+docker                         # Manage Docker containers and images
+docker ps                      # List running containers
+docker images                  # List all available images
+docker run image               # Start a container from an image
+docker exec -it container bash # Run bash shell in container
+docker build .                 # Build Docker image from Dockerfile
+docker pull image              # Download image from registry
+docker push image              # Upload image to registry
+docker logs container          # Show logs from a container
+docker rm container            # Delete a container
+docker rmi image               # Remove a Docker image
+docker stop container          # Stop a running container
+docker start container         # Start a stopped container
+exit                            # Exit the current shell or script
+exit 0                          # Exit with success status code (0)
+exit 1                          # Exit with general error status (non-zero)
+logout                          # Exit a login shell (used in terminal or SSH)
+kill <pid>                      # Send termination signal to process by PID
+kill -9 <pid>                   # Forcefully terminate a process (SIGKILL)
+killall <process_name>          # Terminate all processes by name
+
+pkill <pattern>                 # Kill processes matching a name pattern
+pkill -f <full_command_line>    # Kill processes by matching full command line
+kill -HUP <pid>                 # Restart a daemon (hangup signal)
+xkill                           # Click on a window to force-close it (GUI)
+shutdown now                   # Shutdown the system immediately
+shutdown -r now                # Reboot the system immediately
+poweroff                       # Power off the machine
+halt                           # Halt the system
+reboot                         # Reboot the system
+init 0                         # Switch to runlevel 0 (halt)
+init 6                         # Switch to runlevel 6 (reboot)
+ps                             # Show processes for current shell/session
+ps -e                          # Show all system processes
+ps -f                          # Full-format listing (includes PPID, CMD)
+ps -ef                         # All processes with full-format (most used)
+ps -eF                         # Extra full format (includes more details)
+ps -efH                        # Show process hierarchy (tree structure)
+
+ps -u <username>              # Show processes owned by a specific user
+ps -p <pid>                   # Show specific process by PID
+ps -C <command_name>          # Show process by command name
+ps -o pid,cmd                 # Display only selected columns (e.g., pid, cmd)
+
+ps aux                        # Show all processes (BSD-style)
+ps aux --sort=-%mem           # Sort processes by memory usage
+ps aux --sort=-%cpu           # Sort processes by CPU usage
+
